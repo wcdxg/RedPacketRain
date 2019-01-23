@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RedPacketStyle">
+        <attr name="count" format="integer"/>
+        <attr name="speed" format="integer"/>
+        <attr name="max_size" format="float"/>
+        <attr name="min_size" format="float"/>
+    </declare-styleable>
+</resources>

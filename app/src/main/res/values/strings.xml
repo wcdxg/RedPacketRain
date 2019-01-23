@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RedPacketRain</string>
+    <string name="red_packet_empty">红包被领完了，明天再来吧!</string>
+    <string name="red_packet_before">拍完照将开启红包雨...</string>
+    <string name="red_packet_after">您已领取过红包了，明天再来吧！</string>
+    <string name="red_packet_scan_qrcode">扫码提取红包</string>
 </resources>

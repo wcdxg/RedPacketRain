@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true">
+
+    <com.yuaihen.redpacketrain.redpacket.RedPacketView
+        android:id="@+id/red_packet_test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:count="10"
+        app:max_size="1.1"
+        app:min_size="0.8"
+        app:speed="100"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_red_packet_head"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_red_packet_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:autoSizeMaxTextSize="24sp"
+        android:autoSizeMinTextSize="14sp"
+        android:autoSizeTextType="uniform"
+        android:maxLines="1"
+        android:text="@string/red_packet_before"
+        android:textColor="#f7d4a0"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:autoSizeStepGranularity="1sp"
+        tools:targetApi="o"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_red_packet_running_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:drawableRight="@drawable/ic_red_packet_tip"
+            android:drawablePadding="10dp"
+            android:text="点击掉落的"
+            android:textColor="#f7d4a0"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="22dp"
+            android:text="剩余：10s"
+            android:textColor="#f7d4a0"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_count_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_red_packet_count_down_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:text="红包雨准备开启..."
+            android:textColor="#f7d4a0"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp">
+
+            <ImageView
+                android:id="@+id/iv_gold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_new_year_btn2"/>
+
+            <ImageView
+                android:id="@+id/iv_red1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_new_year_btn3"/>
+
+            <ImageView
+                android:id="@+id/iv_red2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_new_year_btn4"/>
+
+            <!--3s 倒计时-->
+            <TextView
+                android:id="@+id/tv_time_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="3"
+                android:textColor="#db3e3e"
+                android:textSize="100sp"/>
+
+            <!--没有获得红包-->
+            <LinearLayout
+                android:id="@+id/ll_red_packet_fail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_red_packet_fail"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="没获得红包"
+                    android:textColor="#e7c6a1"
+                    android:textSize="10sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="明天再来吧！"
+                    android:textColor="#e7c6a1"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <!--领取成功-->
+            <LinearLayout
+                android:id="@+id/ll_red_packet_success"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_red_packet_success"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="领取成功"
+                    android:textColor="#e7c6a1"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.yuaihen.redpacketrain.redpacket.QrcodeRedPkgView
+        android:id="@+id/qrcode_red_packer_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+</RelativeLayout>
