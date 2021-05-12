@@ -111,6 +111,8 @@ public class RedPacketControlView extends LinearLayout {
      * 显示提示语：点击掉落的红包 和倒计时开始
      */
     public void start() {
+        mLlGetRedPacketFail.setVisibility(GONE);
+        mLlGetRedPacketSuccess.setVisibility(GONE);
         mTvRedPacketTitle.setVisibility(GONE);
         mRlRedPacketRunningTip.setVisibility(VISIBLE);
         mTvTimeCount.setVisibility(VISIBLE);
